@@ -1,0 +1,60 @@
+{
+  "name": "plum",
+  "version": "0.0.1",
+  "description": "Building Plum with from vue 3",
+  "productName": "plumV3",
+  "author": "K45-94 <kelvinhiuhu@live.com>",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --ext .js,.vue ./",
+    "format": "prettier --write \"**/*.{js,vue,,html,md,json}\" --ignore-path .gitignore",
+    "test": "echo \"No test specified\" && exit 0",
+    "build": "quasar build"
+  },
+  "dependencies": {
+    "@quasar/cli": "^2.4.1",
+    "@quasar/extras": "^1.16.12",
+    "@supabase/supabase-js": "^1.35.7",
+    "@vueauth/supabase": "^1.0.0-alpha.20",
+    "axios": "^1.7.3",
+    "core-js": "^3.38.0",
+    "quasar": "^2.16.8",
+    "vue": "^3.4.37",
+    "vue-i18n": "^9.13.1",
+    "vue-router": "^4.4.3"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.25.1",
+    "@quasar/app-webpack": "^3.13.3",
+    "@volar-plugins/vetur": "latest",
+    "@vueauth/quasar-app-extension-auth": "^1.0.0-alpha.30",
+    "eslint": "^9.9.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-vue": "^9.27.0",
+    "eslint-webpack-plugin": "^4.2.0",
+    "git-scripts": "^0.6.4",
+    "prettier": "^3.3.3",
+    "surge": "^0.24.6"
+  },
+  "git": {
+    "scripts": {
+      "pre-push": "surge --project ./ --domain plum-ui.surge.sh"
+    }
+  },
+  "browserslist": [
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
+  ],
+  "engines": {
+    "node": ">= 12.22.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
+}

@@ -1,0 +1,37 @@
+// Theme variables
+:root {
+  --primary-bg: var(--q-color-primary);
+  --secondary-bg: var(--q-color-secondary);
+}
+.bright-background {
+  background-color: #ffffff !important;
+  --primary-bg: #ffffff;
+  --secondary-bg: #f0f0f0;
+}
+
+.dim-background {
+  background-color: #bebebe !important;
+  --primary-bg: #bebebe;
+  --secondary-bg: #becebe;
+}
+
+.dark-background {
+  background-color: #0a0804 !important;
+  --primary-bg: #1c1c1c;
+  --secondary-bg: #7a7a7a;
+}
+
+// Component-specific styles
+.q-card,
+.q-tab-panel,
+.q-form {
+  background-color: var(--primary-bg);
+}
+
+.plum-send-money-form-component {
+  background-color: var(--primary-bg);
+}
+
+.q-tab-panels {
+  background-color: var(--secondary-bg);
+}

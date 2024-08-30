@@ -1,0 +1,24 @@
+$text-sizes: 12, 16, 21;
+
+$text-size-options: (
+  "sm": 0.8,
+  "md": 1,
+  "lg": 1.2,
+  "xl": 1.4,
+);
+
+@each $text-size, $multiplier in $text-size-options {
+  [data-text-sizes="#{$text-size}"] {
+    @each $text in $text-sizes {
+      .text-size-#{$text} {
+        font-size: #{$text * $multiplier}px;
+      }
+    }
+  }
+}
+
+@each $text in $text-sizes {
+  .text-size-fixed-#{$text} {
+    font-size: #{$text}px;
+  }
+}

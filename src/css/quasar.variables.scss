@@ -1,0 +1,16 @@
+$primary: #03350f;
+$secondary: #33ac51;
+$accent: #abb3ad;
+
+$positive: #466365;
+$negative: #630038;
+$info: #8bace7;
+$warning: #ffa5d6;
+
+$shadow-color: #021f09 !default;
+
+.q-body--layout-animate {
+  .q-drawer {
+    transition: transform 0.8s, width 0.8s, top 0.8s, bottom 0.8s !important;
+  }
+}
