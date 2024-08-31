@@ -92,12 +92,10 @@
           filled
           class="q-mb-md"
         />
-        <div class="q-mb-lg">
-          Difference: {{ remainingUnits - totalMonthlyConsumption }} kWh
-        </div>
+
         <div>
           <p class="q-mb-sm text-gradient">
-            Buy KPLC tokens from a low as 1 shilling.
+            Buy ENERGY tokens from a low as 1 shilling.
           </p>
           <q-btn
             to="/profile/payments"
