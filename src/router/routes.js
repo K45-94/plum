@@ -8,7 +8,7 @@ const routes = [
         redirect: "/light",
       },
       {
-        path: "light",
+        path: "/light",
         component: () => import("src/pages/PageLight.vue"),
       },
       {
