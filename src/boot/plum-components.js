@@ -21,9 +21,6 @@ const plumComponents = {
     require("components/PagePlumComponent/PlumBuygoodsFormComponent").default,
   PlumPaybillFormComponent:
     require("components/PagePlumComponent/PlumPaybillFormComponent").default,
-  PlumTransit: require("components/PagePlumComponent/PlumTransit").default,
-  PlumTransitSearch: require("components/PagePlumComponent/PlumTransitSearch")
-    .default,
   PlumApplicationBtn: require("components/PagePlumComponent/PlumApplicationBtn")
     .default,
 };

@@ -4,14 +4,13 @@
       <template #title>ENERGY MANAGEMENT TOOL</template>
     </page-header>
     <page-body>
-      <div class="q-pt-lg q-pb-md q-pl-lg q-pr-lg">
+      <div class="q-pt-lg q-pb-md q-pl-lg q-pr-lg text-brand">
         <!-- Inputs for power consumption, hours used, and quantity -->
-
         <q-input
           v-model="deviceName"
           label="Device Name"
           filled
-          class="q-mb-md"
+          class="q-mb-md text-brand"
         />
         <q-input
           v-model.number="powerConsumption"
@@ -39,21 +38,22 @@
         <q-btn
           @click="addDevice"
           label="Add Device"
-          color="primary"
+          color="info"
           class="q-mb-md"
+          flat
         />
 
-        <!-- Name and highlight the table component -->
+        <!-- Device Consumption Table -->
         <h3 class="table-title">Device Consumption Table</h3>
         <div class="table-container">
           <table class="custom-table">
             <thead>
               <tr>
                 <th>Device Name</th>
-                <th>Power Cons.' (Watts)</th>
+                <th>Power Cons. (Watts)</th>
                 <th>Hours Used per Day</th>
                 <th>Quantity</th>
-                <th>Daily Cons.' (kWh)</th>
+                <th>Daily Cons. (kWh)</th>
               </tr>
             </thead>
             <tbody>
@@ -69,18 +69,18 @@
         </div>
 
         <!-- Display total consumption -->
-        <div :style="{ color: selectedTextColor }" class="q-mb-md">
+        <div class="q-mb-md">
           <div class="row">
-            <div class="text-black">Daily Consumption:</div>
-            <div class="q-ml-lg">{{ totalDailyConsumption }} kWh</div>
+            <div class="">Daily Consumption:</div>
+            <div class="q-ml-lg q-mb-sm">{{ totalDailyConsumption }} kWh</div>
           </div>
           <div class="row">
-            <div class="text-black">Weekly Consumption:</div>
-            <div class="q-ml-lg">{{ totalWeeklyConsumption }} kWh</div>
+            <div class="">Weekly Consumption:</div>
+            <div class="q-ml-lg q-mb-sm">{{ totalWeeklyConsumption }} kWh</div>
           </div>
           <div class="row">
-            <div class="text-black">Total Monthly Consumption:</div>
-            <div class="q-ml-lg">{{ totalMonthlyConsumption }} kWh</div>
+            <div class="">Monthly Consumption:</div>
+            <div class="q-ml-lg q-mb-sm">{{ totalMonthlyConsumption }} kWh</div>
           </div>
         </div>
 
@@ -92,10 +92,23 @@
           filled
           class="q-mb-md"
         />
-        <div :style="{ color: selectedTextColor }">
+        <div class="q-mb-lg">
           Difference: {{ remainingUnits - totalMonthlyConsumption }} kWh
         </div>
+        <div>
+          <p class="q-mb-sm text-gradient">
+            Buy KPLC tokens from a low as 1 shilling.
+          </p>
+          <q-btn
+            to="/profile/payments"
+            color="secondary"
+            label="BUY TOKENS"
+            class="q-mt-md"
+            flat
+          ></q-btn>
+        </div>
       </div>
+
       <div class="page-body-spacer-footer"></div>
     </page-body>
   </page>
@@ -103,7 +116,6 @@
 
 <script>
 import { defineComponent, ref, computed } from "vue";
-import { QInput, QBtn } from "quasar";
 
 export default defineComponent({
   name: "PageLight",
@@ -171,7 +183,6 @@ export default defineComponent({
 
 <style scoped>
 .table-title {
-  color: #2c3e50;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   font-weight: bold;
@@ -206,5 +217,8 @@ export default defineComponent({
 
 .custom-table tbody tr:hover {
   background-color: #f9f9f9;
+}
+.q-input {
+  text-decoration-color: aquamarine;
 }
 </style>

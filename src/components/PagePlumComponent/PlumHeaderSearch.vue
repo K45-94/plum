@@ -1,9 +1,7 @@
 <template>
-  <header
-    class="page-header q-header q-layout__section--marginal fixed-top text-secondary"
-  >
+  <header class="page-header q-header q-layout__section--marginal fixed-top">
     <div
-      class="q-toolbar row no-wrap items-center text-white"
+      class="q-toolbar row no-wrap items-center"
       active-color="secondary"
     ></div>
   </header>

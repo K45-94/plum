@@ -4,32 +4,31 @@
       <template #button-left>
         <page-header-button-back-left label="settings" />
       </template>
-      <template #title> Theme switcher </template>
+      <template #title>Theme switcher</template>
     </page-header>
     <page-body>
       <div class="q-pt-lg q-pb-md q-pl-lg q-pr-lg">
-        <div class="q-col-gutter-lg text-secondary">
-          <q-option-group
-            type="radio"
-            v-model="themes"
-            :options="select"
-            color="secondary"
-          />
-          <q-space />
-          <div class="row q-pt-none">
-            <p class="q-mb-none text-secondary">Color</p>
-            <q-list class="relative-position">
-              <div class="center">
-                <q-btn round color="red-10" size="16px" class="q-ma-md" />
-                <q-btn round color="pink" size="16px" class="q-ma-md" />
-                <q-btn round color="purple" size="16px" class="q-ma-md" />
-                <q-btn round color="deep-purple" size="16px" class="q-ma-md" />
-                <q-btn round color="blue-grey" size="16px" class="q-ma-md" />
-                <q-btn round color="green" size="16px" class="q-ma-md" />
-                <q-btn round color="brown-5" size="16px" class="q-ma-md" />
-                <q-btn round color="grey" size="16px" class="q-ma-md" />
-              </div>
-            </q-list>
+        <div class="q-col-gutter-lg" :style="{ color: selectedTextColor }">
+          <div>
+            <p>Change background colour</p>
+            <q-option-group
+              type="radio"
+              v-model="themes"
+              :options="select"
+              color="secondary"
+            />
+            <q-space />
+            <q-option-group
+              type="radio"
+              v-model="selectedTextColor"
+              :options="
+                currentTextColorOptions.map((color) => ({
+                  label: color,
+                  value: color,
+                }))
+              "
+              color="secondary"
+            />
           </div>
 
           <q-space />
@@ -95,20 +94,30 @@
 </template>
 
 <script>
-import { ref, watch, defineComponent } from "vue";
+import { ref, computed, watch, defineComponent } from "vue";
+import { QOptionGroup, QSlider, QSpace, QIcon } from "quasar";
 import Page from "src/components/PagePlumComponent/Page.vue";
 import PageHeader from "src/components/PagePlumComponent/PageHeader.vue";
 import PageHeaderButtonBackLeft from "src/components/PagePlumComponent/PageHeaderButtonBackLeft.vue";
 import store from "src/plumStore";
 
 export default defineComponent({
-  components: [Page, PageHeader, PageHeaderButtonBackLeft],
+  components: {
+    Page,
+    PageHeader,
+    PageHeaderButtonBackLeft,
+    QOptionGroup,
+    QSlider,
+    QSpace,
+    QIcon,
+  },
   name: "PageThemes",
   setup() {
     const themes = ref("op2");
     const backgroundClass = ref("");
     const textModel = ref(2); // Default to medium size
     const fontWeightModel = ref(2);
+    const selectedTextColor = ref(store.state.textColor);
 
     const select = [
       { label: "Bright background", value: "op1" },
@@ -116,7 +125,11 @@ export default defineComponent({
       { label: "Dark background", value: "op3" },
     ];
 
-    // Watch for changes in themes and update the background class
+    const currentTextColorOptions = computed(() => {
+      return store.state.textColorOptions[backgroundClass.value] || [];
+    });
+
+    // Watch for changes in themes and update the background class and text color options
     watch(themes, (newVal) => {
       if (newVal === "op1") {
         backgroundClass.value = "bright-background";
@@ -128,6 +141,13 @@ export default defineComponent({
         backgroundClass.value = "dark-background";
         store.state.theme = "dark-background";
       }
+      selectedTextColor.value = currentTextColorOptions.value[0];
+      store.state.textColor = selectedTextColor.value;
+    });
+
+    // Watcher for selectedTextColor to update the store
+    watch(selectedTextColor, (newColor) => {
+      store.state.textColor = newColor;
     });
 
     // Watcher for textModel to adjust text size
@@ -143,7 +163,24 @@ export default defineComponent({
       textModel,
       fontWeightModel,
       backgroundClass,
+      selectedTextColor,
+      currentTextColorOptions,
     };
   },
 });
 </script>
+
+<style scoped>
+.q-radio {
+  margin-right: 10px;
+}
+.bright-background {
+  background-color: #ffffff !important;
+}
+.dim-background {
+  background-color: #bebebe !important;
+}
+.dark-background {
+  background-color: #0a0804 !important;
+}
+</style>

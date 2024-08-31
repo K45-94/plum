@@ -37,37 +37,9 @@ export default boot(({ router }) => {
       component: () => import("src/layouts/PlumLayout.vue"),
       children: [
         {
-          path: "",
-          name: "dashboard",
+          path: "/light",
           meta: { authOnly: true },
-          redirect: "/feeds",
-        },
-        {
-          path: "/feeds",
-          meta: { authOnly: true },
-          component: () => import("src/pages/Feeds/PageFeeds.vue"),
-          children: [
-            {
-              path: "/feeds/:id",
-              meta: { authOnly: true },
-              component: () => import("src/pages/Feeds/PagePost.vue"),
-            },
-          ],
-        },
-        {
-          path: "/search",
-          meta: { authOnly: true },
-          component: () => import("src/pages/PageSearch.vue"),
-        },
-        {
-          path: "/camera",
-          meta: { authOnly: true },
-          component: () => import("src/pages/PageCamera.vue"),
-        },
-        {
-          path: "/:name",
-          meta: { authOnly: true },
-          component: () => import("src/pages/PageUserProfile.vue"),
+          component: () => import("src/pages/PageLight.vue"),
         },
         {
           path: "/profile",
@@ -190,32 +162,7 @@ export default boot(({ router }) => {
                 },
               ],
             },
-            {
-              path: "/profile/users",
-              meta: { authOnly: true },
-              component: () => import("src/pages/Profile/PageUsers.vue"),
-              name: "Users",
-              children: [
-                {
-                  path: "/profile/users/:id",
-                  meta: { authOnly: true },
-                  component: () => import("src/pages/Profile/PageChat.vue"),
-                  name: "Chat",
-                },
-              ],
-            },
           ],
-        },
-      ],
-    },
-    {
-      path: "/",
-      component: () => import("src/layouts/PlumTransitLayout.vue"),
-      children: [
-        {
-          path: "/light",
-          meta: { authOnly: true },
-          component: () => import("src/pages/PageLight.vue"),
         },
       ],
     },

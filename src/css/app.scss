@@ -5,9 +5,9 @@
   background: linear-gradient(
     90.13deg,
     #33ac51,
-    #abb3ad,
-    #bbdfc4,
-    #abb3ad,
+    #a3b4a7,
+    #6be289,
+    #a3b4a7,
     #33ac51
   );
   -webkit-background-clip: text;
@@ -50,21 +50,12 @@
           height: 50px;
         }
       }
-
-      &-user-posts {
-        height: 185px;
-      }
-
       &-footer {
         height: 52px;
       }
 
       &-lift {
         height: 66px;
-      }
-
-      &-chat {
-        height: 49px;
       }
     }
   }

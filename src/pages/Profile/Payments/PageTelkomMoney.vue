@@ -16,12 +16,10 @@
                 clickable
               >
                 <q-item-section avatar class="col-4">
-                  <q-avatar color="primary" text-color="secondary">
-                    TK
-                  </q-avatar>
+                  <q-avatar color="primary"> TK </q-avatar>
                 </q-item-section>
                 <q-item-section class="col-4">
-                  <q-item-label class="text-bold absolute-center text-secondary"
+                  <q-item-label class="text-bold absolute-center"
                     >Send From T-kash</q-item-label
                   >
                 </q-item-section>
@@ -39,12 +37,10 @@
               <q-space class="q-pa-sm" />
               <q-item to="" clickable>
                 <q-item-section avatar class="col-2">
-                  <q-avatar color="primary" text-color="secondary">
-                    WC
-                  </q-avatar>
+                  <q-avatar color="primary"> WC </q-avatar>
                 </q-item-section>
                 <q-item-section class="col-8">
-                  <q-item-label class="text-bold absolute-center text-secondary"
+                  <q-item-label class="text-bold absolute-center"
                     >Get Cash From T-kash</q-item-label
                   >
                 </q-item-section>
@@ -62,12 +58,10 @@
               <q-space class="q-pa-sm" />
               <q-item to="" clickable>
                 <q-item-section avatar class="col-4">
-                  <q-avatar color="primary" text-color="secondary">
-                    LT
-                  </q-avatar>
+                  <q-avatar color="primary"> LT </q-avatar>
                 </q-item-section>
                 <q-item-section class="col-4">
-                  <q-item-label class="text-bold absolute-center text-secondary"
+                  <q-item-label class="text-bold absolute-center"
                     >Pay With T-Kash</q-item-label
                   >
                 </q-item-section>
@@ -85,12 +79,10 @@
               <q-space class="q-pa-sm" />
               <q-item to="" clickable>
                 <q-item-section avatar class="col-4">
-                  <q-avatar color="primary" text-color="secondary">
-                    B
-                  </q-avatar>
+                  <q-avatar color="primary"> B </q-avatar>
                 </q-item-section>
                 <q-item-section class="col-4">
-                  <q-item-label class="text-bold absolute-center text-secondary"
+                  <q-item-label class="text-bold absolute-center"
                     >T-Kash Balance</q-item-label
                   >
                 </q-item-section>

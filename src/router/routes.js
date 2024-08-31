@@ -5,54 +5,16 @@ const routes = [
     children: [
       {
         path: "",
-        redirect: "/feeds",
-      },
-      {
-        path: "feeds", // Relative path without leading slash
-        component: () => import("src/pages/Feeds/PageFeeds.vue"),
-        children: [
-          {
-            path: ":id", // Dynamic route for posts
-            component: () => import("src/pages/Feeds/PagePost.vue"),
-          },
-        ],
-      },
-      {
-        path: "search", // Relative path without leading slash
-        component: () => import("src/pages/PageSearch.vue"),
-      },
-      {
-        path: "camera", // Relative path without leading slash
-        component: () => import("src/pages/PageCamera.vue"),
-      },
-      {
-        path: "search", // Relative path without leading slash
-        component: () => import("src/pages/PageSearch.vue"),
+        redirect: "/light",
       },
       {
         path: "light",
         component: () => import("src/pages/PageLight.vue"),
       },
       {
-        path: ":name", // Dynamic route for user profile
-        component: () => import("src/pages/PageUserProfile.vue"),
-      },
-      {
         path: "profile", // Relative path without leading slash
         component: () => import("src/pages/Profile/PageProfile.vue"),
         children: [
-          {
-            path: "users", // Relative path without leading slash
-            component: () => import("src/pages/Profile/PageUsers.vue"),
-            name: "Users",
-            children: [
-              {
-                path: ":id", // Dynamic route for chat
-                component: () => import("src/pages/Profile/PageChat.vue"),
-                name: "Chat",
-              },
-            ],
-          },
           {
             path: "settings", // Relative path without leading slash
             component: () => import("src/pages/Profile/PageSettings.vue"),

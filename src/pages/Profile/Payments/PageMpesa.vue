@@ -13,12 +13,10 @@
             <q-list class="full-width">
               <q-item to="/profile/payments/mpesawallet/sendmpesa" clickable>
                 <q-item-section avatar class="col-4">
-                  <q-avatar color="primary" text-color="secondary">
-                    SM
-                  </q-avatar>
+                  <q-avatar color="primary"> SM </q-avatar>
                 </q-item-section>
                 <q-item-section class="col-4">
-                  <q-item-label class="text-bold absolute-center text-secondary"
+                  <q-item-label class="text-bold absolute-center"
                     >Send From Mpesa</q-item-label
                   >
                 </q-item-section>
@@ -36,12 +34,10 @@
               <q-space class="q-pa-sm" />
               <q-item to="/profile/payments/mpesawallet/lipanampesa" clickable>
                 <q-item-section avatar class="col-4">
-                  <q-avatar color="primary" text-color="secondary">
-                    LM
-                  </q-avatar>
+                  <q-avatar color="primary"> LM </q-avatar>
                 </q-item-section>
                 <q-item-section class="col-4">
-                  <q-item-label class="text-bold absolute-center text-secondary"
+                  <q-item-label class="text-bold absolute-center"
                     >Lipa na M-PESA</q-item-label
                   >
                 </q-item-section>
@@ -59,12 +55,10 @@
               <q-space class="q-pa-sm" />
               <q-item to="" clickable>
                 <q-item-section avatar class="col-4">
-                  <q-avatar color="primary" text-color="secondary">
-                    WC
-                  </q-avatar>
+                  <q-avatar color="primary"> WC </q-avatar>
                 </q-item-section>
                 <q-item-section class="col-4">
-                  <q-item-label class="text-bold absolute-center text-secondary"
+                  <q-item-label class="text-bold absolute-center"
                     >Get Cash From Mpesa</q-item-label
                   >
                 </q-item-section>
@@ -82,12 +76,10 @@
               <q-space class="q-pa-sm" />
               <q-item to="" clickable>
                 <q-item-section avatar class="col-4">
-                  <q-avatar color="primary" text-color="secondary">
-                    B
-                  </q-avatar>
+                  <q-avatar color="primary"> B </q-avatar>
                 </q-item-section>
                 <q-item-section class="col-4">
-                  <q-item-label class="text-bold absolute-center text-secondary"
+                  <q-item-label class="text-bold absolute-center"
                     >Balance</q-item-label
                   >
                 </q-item-section>

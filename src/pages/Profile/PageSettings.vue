@@ -13,14 +13,14 @@
             <q-card flat>
               <q-item>
                 <q-item-section class="col-6">
-                  <q-item-label class="text-bold center-left text-secondary"
+                  <q-item-label class="text-bold center-left"
                     >Notifications</q-item-label
                   >
                 </q-item-section>
                 <q-item-section class="col-6">
                   <q-toggle
                     :label="NotificationsToggle"
-                    color="secondary"
+                    color="info"
                     false-value="Off"
                     true-value="On"
                     v-model="NotificationsToggle"
@@ -33,7 +33,7 @@
             <q-card flat>
               <q-item>
                 <q-item-section class="col-6">
-                  <q-item-label class="text-bold center-left text-secondary"
+                  <q-item-label class="text-bold center-left"
                     >Security</q-item-label
                   >
                 </q-item-section>
@@ -53,7 +53,7 @@
             <q-card flat>
               <q-item to="/profile/settings/themes">
                 <q-item-section class="col-6">
-                  <q-item-label class="text-bold center-left text-secondary"
+                  <q-item-label class="text-bold center-left"
                     >Display</q-item-label
                   >
                 </q-item-section>
@@ -73,7 +73,7 @@
             <q-card flat>
               <q-item>
                 <q-item-section class="col-6">
-                  <q-item-label class="text-bold center-left text-secondary"
+                  <q-item-label class="text-bold center-left"
                     >Help n Support</q-item-label
                   >
                 </q-item-section>
@@ -93,7 +93,7 @@
             <q-card flat>
               <q-item>
                 <q-item-section class="col-6">
-                  <q-item-label class="text-bold center-left text-secondary"
+                  <q-item-label class="text-bold center-left"
                     >About Plum</q-item-label
                   >
                 </q-item-section>

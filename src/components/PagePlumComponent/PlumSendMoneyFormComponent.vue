@@ -16,12 +16,7 @@
     />
     <div class="row">
       <q-space />
-      <q-btn
-        color="primary"
-        class="text-secondary"
-        @click="submitForm"
-        label="send money"
-      />
+      <q-btn color="primary" class="" @click="submitForm" label="send money" />
     </div>
   </q-form>
 </template>
