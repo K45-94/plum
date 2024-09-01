@@ -174,13 +174,4 @@ export default defineComponent({
 .q-radio {
   margin-right: 10px;
 }
-.bright-background {
-  background-color: #ffffff !important;
-}
-.dim-background {
-  background-color: #bebebe !important;
-}
-.dark-background {
-  background-color: #0a0804 !important;
-}
 </style>
