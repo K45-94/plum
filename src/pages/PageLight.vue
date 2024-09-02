@@ -25,11 +25,12 @@
           label="Hours Used per Day"
           filled
           class="q-mb-md"
+          @blur="validateHours"
         />
         <q-input
           v-model.number="quantity"
           type="number"
-          label="Quantity"
+          label="Quantity/No.S"
           filled
           class="q-mb-md"
         />
@@ -52,17 +53,43 @@
                 <th>Device Name</th>
                 <th>Power Cons. (Watts)</th>
                 <th>Hours Used per Day</th>
-                <th>Quantity</th>
+                <th>No.S</th>
                 <th>Daily Cons. (kWh)</th>
+                <th>Act</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="device in devices" :key="device.name">
-                <td>{{ device.name }}</td>
-                <td>{{ device.power }}</td>
-                <td>{{ device.hours }}</td>
-                <td>{{ device.quantity }}</td>
+              <tr v-for="(device, index) in devices" :key="index">
+                <td>
+                  <q-input v-model="device.name" type="text" filled />
+                </td>
+                <td>
+                  <q-input v-model.number="device.power" type="number" filled />
+                </td>
+                <td>
+                  <q-input
+                    v-model.number="device.hours"
+                    type="number"
+                    filled
+                    @blur="validateDeviceHours(device)"
+                  />
+                </td>
+                <td>
+                  <q-input
+                    v-model.number="device.quantity"
+                    type="number"
+                    filled
+                  />
+                </td>
                 <td>{{ device.daily.toFixed(2) }}</td>
+                <td>
+                  <q-btn
+                    @click="saveDevice(index)"
+                    label="Save"
+                    color="primary"
+                    flat
+                  />
+                </td>
               </tr>
             </tbody>
           </table>
@@ -137,6 +164,20 @@ export default defineComponent({
       return totalDailyConsumption.value * 30;
     });
 
+    function validateHours() {
+      if (hoursUsed.value > 24) {
+        hoursUsed.value = 24;
+        alert("Hours used per day cannot exceed 24 hours.");
+      }
+    }
+
+    function validateDeviceHours(device) {
+      if (device.hours > 24) {
+        device.hours = 24;
+        alert("Hours used per day cannot exceed 24 hours.");
+      }
+    }
+
     function addDevice() {
       if (
         deviceName.value.trim() &&
@@ -162,6 +203,11 @@ export default defineComponent({
       }
     }
 
+    function saveDevice(index) {
+      const device = devices.value[index];
+      device.daily = (device.power * device.hours * device.quantity) / 1000;
+    }
+
     return {
       deviceName,
       powerConsumption,
@@ -173,50 +219,10 @@ export default defineComponent({
       totalMonthlyConsumption,
       remainingUnits,
       addDevice,
-      selectedTextColor: ref("green"),
+      saveDevice,
+      validateHours,
+      validateDeviceHours,
     };
   },
 });
 </script>
-
-<style scoped>
-.table-title {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  text-align: center;
-}
-
-.table-container {
-  max-width: 100%;
-  overflow-x: auto;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.custom-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.custom-table th,
-.custom-table td {
-  padding: 8px 12px;
-  border: 1px solid #ddd;
-  text-align: left;
-}
-
-.custom-table th {
-  background-color: #acdbbe;
-  color: #333;
-}
-
-.custom-table tbody tr:hover {
-  background-color: #f9f9f9;
-}
-.q-input {
-  text-decoration-color: aquamarine;
-}
-</style>
