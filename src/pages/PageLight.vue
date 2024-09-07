@@ -146,10 +146,10 @@ export default defineComponent({
   name: "PageLight",
   setup() {
     const deviceName = ref("");
-    const powerConsumption = ref(0);
-    const hoursUsed = ref(0);
-    const quantity = ref(0);
-    const remainingUnits = ref(0);
+    const powerConsumption = ref();
+    const hoursUsed = ref();
+    const quantity = ref();
+    const remainingUnits = ref();
     const devices = ref([]);
 
     const totalDailyConsumption = computed(() => {

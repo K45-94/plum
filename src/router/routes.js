@@ -7,6 +7,7 @@ const routes = [
         path: "",
         redirect: "/light",
       },
+
       {
         path: "/light",
         component: () => import("src/pages/PageLight.vue"),
@@ -111,6 +112,10 @@ const routes = [
             ],
           },
         ],
+      },
+      {
+        path: "artisans",
+        component: () => import("src/pages/PageArtisans.vue"),
       },
     ],
   },

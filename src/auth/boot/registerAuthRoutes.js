@@ -40,6 +40,7 @@ export default boot(({ router }) => {
         meta: { authOnly: true },
         component: () => import("src/pages/PageLight.vue"),
       },
+
       {
         path: "/profile",
         meta: { authOnly: true },
